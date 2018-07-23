@@ -1,0 +1,22 @@
+<h2>Tasks List</h2>
+<app-task-search></app-task-search>
+
+<ul class="heroes">
+   <li>
+       <span class="badge">#</span>
+       DriverName -  Courier - Status  - DeliveryDate  - Actions
+   </li>
+  <li *ngFor="let task of tasks">
+    <a routerLink="/detail/{{task.id}}">
+      <span class="badge">{{task.id}}</span> {{task.driverName}} -  {{ task.courier}} - {{task.status}}  - {{task.deliveryDate}}
+
+    </a>
+
+    <button class="delete" title="delete task"
+      (click)="delete(task)">x</button>
+      ||
+      <button class="delete" title="Update task"
+              (click)="update(task)">Complete</button>
+  </li>
+
+</ul>
